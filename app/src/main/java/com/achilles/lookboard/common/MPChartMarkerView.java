@@ -23,7 +23,7 @@ public class MPChartMarkerView extends MarkerView {
     public MPChartMarkerView(Context context, int layoutResource) {
         super(context, layoutResource);
 
-        tvContent =findViewById(R.id.tvContent);
+        tvContent = findViewById(R.id.tvContent);
     }
 
     @Override
@@ -37,15 +37,15 @@ public class MPChartMarkerView extends MarkerView {
 
             tvContent.setText(StringUtils.double2String(e.getY(), 2));
         }
-
-        super.refreshContent(e, highlight);//必须加上该句话；This sentence must be added.
+        //必须加上该句话
+        super.refreshContent(e, highlight);
     }
 
     private MPPointF mOffset;
 
     @Override
     public MPPointF getOffset() {
-        if(mOffset == null) {
+        if (mOffset == null) {
             // center the marker horizontally and vertically
             mOffset = new MPPointF(-(getWidth() / 2), -getHeight());
         }

@@ -13,8 +13,10 @@ public class StringUtils {
      */
     public static String double2String(double d, int num) {
         NumberFormat nf = NumberFormat.getNumberInstance();
-        nf.setMaximumFractionDigits(num);//保留两位小数
-        nf.setGroupingUsed(false);//去掉数值中的千位分隔符
+        //保留两位小数
+        nf.setMaximumFractionDigits(num);
+        //去掉数值中的千位分隔符
+        nf.setGroupingUsed(false);
 
         String temp = nf.format(d);
         if (temp.contains(".")) {
@@ -33,16 +35,14 @@ public class StringUtils {
     /**
      * 将double转为数值，并最多保留num位小数。
      *
-     * @param d
-     * @param num 小数个数
+     * @param num      小数个数
      * @param defValue 默认值。当d为null时，返回该值。
-     * @return
      */
-    public static String double2String(Double d, int num, String defValue){
-        if(d==null){
+    public static String double2String(Double d, int num, String defValue) {
+        if (d == null) {
             return defValue;
         }
 
-        return double2String(d,num);
+        return double2String(d, num);
     }
 }
